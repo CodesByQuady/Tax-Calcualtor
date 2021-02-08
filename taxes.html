@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+<title>Taxes</title>
+</head>
+<body>
+<h1>Tax/Quantity</h1>
+<h2>Press the button to calculate the <span>tax</span> for an item.</h2>
+<button id="button" type=button onclick="taxFunction()">START</button>
+<p id ='output'></p>
+
+<style>
+h1 { 
+	font-family : cursive 
+}
+
+h2 { font-family : cursive }
+
+p {
+	font-size : 32px;
+	font-family : cursive;
+}
+span {
+	color : red
+}
+
+</style>
+</body>
+<script>
+// Program will start when the button is pressed.
+function taxFunction(){
+	let itemPrice = parseFloat(prompt('Enter price of your item.'));
+	let itemQuantity = parseInt(prompt('Enter the amount of item(s) bought.'));
+	var tax = (itemPrice * itemQuantity) * .06 * 10 / 10;
+	const subtotal = itemPrice * itemQuantity;
+	const total = (itemPrice * itemQuantity) + tax;
+	document.getElementById('output').innerHTML = "The subtotal is " + subtotal + " . The total with taxes are " + total; 
+}
+
+
+</script>
+</html>
